@@ -79,7 +79,72 @@ namespace Persistence
                 }
             };
 
+            var statuses = new List<Status>
+            {
+                new Status
+                {
+                    Title = "Created",
+                },
+                new Status
+                {
+                    Title = "On Hold",
+                },
+                new Status
+                {
+                    Title = "Completed",
+                },
+                new Status
+                {
+                    Title = "Under Review",
+                },
+                new Status
+                {
+                    Title = "Started",
+                },
+            };
+
+            var todoCategories = new List<Category>
+            {
+                new Category
+                {
+                    Title = "UI",
+                },
+                new Category
+                {
+                    Title = "API",
+                },
+                new Category
+                {
+                    Title = "Infrastructure",
+                },
+                new Category
+                {
+                    Title = "Meeting",
+                },
+                new Category
+                {
+                    Title = "Design",
+                },
+                new Category
+                {
+                    Title = "Personal",
+                },
+                new Category
+                {
+                    Title = "Phone Call",
+                },
+                new Category
+                {
+                    Title = "Information Gathering",
+                },
+            };
+
             await context.Todos.AddRangeAsync(todos);
+
+            await context.Categories.AddRangeAsync(todoCategories);
+
+            await context.Statuses.AddRangeAsync(statuses);
+
             await context.SaveChangesAsync();
         }
     }

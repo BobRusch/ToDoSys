@@ -13,5 +13,8 @@ namespace Persistence
         }
 
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<Note> Notes { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
