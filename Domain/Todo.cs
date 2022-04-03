@@ -10,6 +10,7 @@ namespace Domain
         public DateTime DateDue { get; set; }
         public DateTime LastUpdated { get; set; }
         public string Status { get; set; }
+        public string Priority { get; set; }
         public bool Parent { get; set; }
         public Guid? SubToDoId { get; set; }
     }

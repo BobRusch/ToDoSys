@@ -7,15 +7,20 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 // import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+// import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Button as SUButton, Icon } from "semantic-ui-react";
+import { Button } from "@mui/material";
 
-const pages = ["Todos", "Pricing", "Errors"];
+const pages = ["Dashboard", "Errors"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const NavBar = () => {
+interface Props {
+  handleFormOpen: () => void;
+}
+
+const NavBar = ({ handleFormOpen }: Props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,16 +40,17 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            LOGO
+            <img src="/assets/logo.png" alt="logo" style={{ height: "37px" }} />
+            ToDo's
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -88,10 +94,14 @@ const NavBar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+          ></Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              paddingTop: "6px",
+            }}
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -101,12 +111,20 @@ const NavBar = () => {
                 {page}
               </Button>
             ))}
+            <MenuItem>
+              <SUButton
+                onClick={handleFormOpen}
+                positive
+                content="Create Todo"
+              />
+            </MenuItem>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <Icon name="user" />
               </IconButton>
             </Tooltip>
             <Menu

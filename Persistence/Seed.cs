@@ -20,7 +20,8 @@ namespace Persistence
                     Description = "Todo 2 months ago",
                     Category = "Infrastructure",
                     Status = "On Hold",
-                    Parent = true
+                    Parent = true,
+                    Priority = "Informational"
                 },
                 new Todo
                 {
@@ -31,7 +32,8 @@ namespace Persistence
                     Description = "Todo 1 month ago",
                     Category = "UI",
                     Status = "Under Review",
-                    Parent = true
+                    Parent = true,
+                    Priority = "Important"
                 },
                 new Todo
                 {
@@ -42,9 +44,10 @@ namespace Persistence
                     Description = "Todo 6 month in future",
                     Category = "API",
                     Status = "Created",
-                    Parent = true
+                    Parent = true,
+                    Priority = "High"
                 },
-                                new Todo
+                new Todo
                 {
                     Title = "Past Todo 3",
                     DateCreated = DateTime.Now.AddMonths(-2),
@@ -53,7 +56,8 @@ namespace Persistence
                     Description = "Todo 2 months ago",
                     Category = "Infrastructure",
                     Status = "On Hold",
-                    Parent = true
+                    Parent = true,
+                    Priority = "Medium"
                 },
                 new Todo
                 {
@@ -64,7 +68,8 @@ namespace Persistence
                     Description = "Todo 1 month ago",
                     Category = "UI",
                     Status = "Under Review",
-                    Parent = false
+                    Parent = false,
+                    Priority = "Critical"
                 },
                 new Todo
                 {
@@ -75,7 +80,8 @@ namespace Persistence
                     Description = "Todo 6 month in future",
                     Category = "API",
                     Status = "Created",
-                    Parent = true
+                    Parent = true,
+                    Priority = "Low"
                 }
             };
 
